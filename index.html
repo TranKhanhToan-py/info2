@@ -76,6 +76,20 @@
       code{background: rgba(148,163,184,.12); padding:2px 6px; border-radius:6px}
 
       .pill{font-size:12px; border:1px solid rgba(148,163,184,.25); padding:6px 10px; border-radius:999px; color:var(--muted)}
+      /* Sửa hiển thị trên màn hình nhỏ */
+      @media (max-width: 760px) {
+        body {
+          padding:16px; /* đỡ sát lề */
+        }
+        .qr img {
+          width:100%;
+          max-width:220px; /* vẫn giới hạn trên */
+          height:auto;     /* giữ tỉ lệ */
+        }
+        .content {
+          gap:20px; /* giảm khoảng trống giữa 2 khối */
+        }
+      }
     </style>
   </head>
   <body>
@@ -173,4 +187,5 @@
     </script>
   </body>
   </html>
+
 

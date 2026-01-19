@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Thẻ thông tin cá nhân</title>
-  <meta name="description" content="Trang web thông tin cá nhân kèm mã QR." />
+  <meta name="description" content="Trang web thông tin cá nhân." />
 
   <style>
     :root {
@@ -13,8 +13,6 @@
       --muted: #9ca3af;
       --text: #e5e7eb;
       --accent: #38bdf8;
-      --accent-2: #22c55e;
-      --ring: rgba(56, 189, 248, 0.35);
       --shadow: 0 20px 45px rgba(0,0,0,.45), 0 8px 20px rgba(2,6,23,.6);
       --radius: 20px;
     }
@@ -28,14 +26,14 @@
         radial-gradient(1200px 800px at 15% 10%, #0b1220, var(--bg)),
         radial-gradient(1000px 700px at 85% 90%, #0b1220, var(--bg));
       color:var(--text);
-      font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       display:grid;
       place-items:center;
       padding:32px;
     }
 
     .card{
-      width:min(920px, 100%);
+      width:min(720px, 100%);
       background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
       border:1px solid rgba(148,163,184,0.15);
       border-radius:var(--radius);
@@ -84,14 +82,10 @@
     }
 
     .content{
-      display:grid;
-      grid-template-columns:1.5fr 1fr;
-      gap:28px;
       padding:28px 32px
     }
 
     @media (max-width:760px){
-      .content{grid-template-columns:1fr}
       body{padding:16px}
     }
 
@@ -122,37 +116,11 @@
 
     .value a:hover{color:var(--accent)}
 
-    .qr{
-      display:grid;
-      place-items:center;
-      gap:10px;
-      padding:18px;
-      border-radius:16px;
-      background:rgba(2,6,23,.45);
-      border:1px dashed rgba(148,163,184,0.2)
-    }
-
-    .qr img{
-      width:220px;
-      height:220px;
-      object-fit:contain;
-      image-rendering:crisp-edges
-    }
-
-    .caption{
-      font-size:14px;
-      color:var(--muted);
-      text-align:center
-    }
-
     .footer{
       padding:18px 28px;
       border-top:1px solid rgba(148,163,184,0.12);
       color:var(--muted);
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:12px
+      text-align:center;
     }
 
     code{
@@ -179,7 +147,6 @@
   </section>
 
   <section class="content">
-
     <div class="panel">
 
       <div class="row">
@@ -197,23 +164,15 @@
       </div>
 
     </div>
-
-    <div class="qr">
-      <img src="qr_code.png" alt="QR Code">
-      <div class="caption">Quét để xem hồ sơ</div>
-    </div>
-
   </section>
 
   <div class="footer">
-    <div>Thiết kế cá nhân</div>
-    <div>Dùng file QR: <code>qr_code.png</code></div>
+    Trang thông tin cá nhân
   </div>
 
 </main>
 
 <script>
-  // Tự cập nhật ngày giờ
   const el = document.getElementById('updated');
   const d = new Date();
   const f = new Intl.DateTimeFormat('vi-VN', {
@@ -222,7 +181,6 @@
   });
   el.textContent = f.format(d);
 
-  // Thông tin cá nhân
   document.getElementById('name').textContent = 'Trần Khánh Toàn';
 
   document.getElementById('tiktok').href =
